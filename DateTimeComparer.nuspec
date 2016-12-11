@@ -6,7 +6,7 @@
     <title>DateTimeComparer helps compare DateTime with given precision</title>
     <authors>Eric Newton</authors>
     <owners>Eric Newton</owners>
-    <!--<licenseUrl>apache license</licenseUrl>-->
+    <licenseUrl>https://github.com/ericnewton76/DateTimeComparer/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/ericnewton76/DateTimeComparer</projectUrl>
     <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
