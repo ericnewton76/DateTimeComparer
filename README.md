@@ -9,6 +9,9 @@ Easily installed via nuget:
 nuget install DateTimeComparer
 ```
 
+## Notable Upcoming
+- include threshold for comparision, ie, "compare these DateTime values within 5 seconds"
+
 ## Quick Examples
 
 ```c#
