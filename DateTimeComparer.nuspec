@@ -12,11 +12,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>DateTimeComparer helps comparison of DateTime instances within a desired precision.  Sometimes ticks is just too granular!</description>
     <releaseNotes>Initial release.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2017</copyright>
     <tags>DateTime Comparer Precision Seconds Minutes Hours Days Months Years</tags>
   </metadata>
   <files>
-    <file src="DateTimeComparer\bin\Release\DateTimeComparer.dll" target="lib\net40" />
-    <file src="DateTimeComparer\bin\Release\DateTimeComparer.pdb" target="lib\net40" />
+    <file src="DateTimeComparer\bin\Release\net40\DateTimeComparer.*" target="lib\net40" />
   </files>
 </package>

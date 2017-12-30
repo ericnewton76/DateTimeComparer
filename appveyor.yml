@@ -12,6 +12,8 @@ nuget:
   account_feed: true
   project_feed: true
 
+image: Visual Studio 2017
+
 init:
 - ps: >
     if($env:APPVEYOR_REPO_TAG -eq "true" -And $env:APPVEYOR_REPO_TAG_NAME.StartsWith("v") -eq $true) {
@@ -28,12 +30,8 @@ assembly_info:
   assembly_informational_version: '{version}'
 
 configuration: Release
-
-before_build:
-- cmd: nuget restore DateTimeComparer.sln
-
 build:
-  verbosity: normal
+  verbosity: minimal
 
 after_build:
 - cmd: >

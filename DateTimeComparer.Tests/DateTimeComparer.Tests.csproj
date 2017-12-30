@@ -8,8 +8,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DateTimeComparer_Tests</RootNamespace>
-    <AssemblyName>DateTimeComparer_Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AssemblyName>DateTimeComparer.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,8 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Users\Eric\AppData\Roaming\NuGet\NUnit.3.9.0\lib\net40\nunit.framework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\..\Users\Eric\AppData\Roaming\NuGet\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -42,13 +41,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DateTimeComparer\DateTimeComparer.csproj">
-      <Project>{926c9fca-65f4-4f2e-8962-d0d1ca0b4da0}</Project>
-      <Name>DateTimeComparer</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\DateTimeComparer\DateTimeComparer.csproj">
+      <Project>{243601b9-4def-4646-8ec6-14434c2d2a21}</Project>
+      <Name>DateTimeComparer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
