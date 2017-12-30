@@ -15,4 +15,8 @@
     <copyright>Copyright 2016</copyright>
     <tags>DateTime Comparer Precision Seconds Minutes Hours Days Months Years</tags>
   </metadata>
+  <files>
+    <file src="DateTimeComparer\bin\Release\DateTimeComparer.dll" target="lib\net40" />
+    <file src="DateTimeComparer\bin\Release\DateTimeComparer.pdb" target="lib\net40" />
+  </files>
 </package>
