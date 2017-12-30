@@ -32,6 +32,9 @@ assembly_info:
 configuration: Release
 build:
   verbosity: minimal
+before_build:
+- cmd: >
+    pushd DateTimeComparer.Tests & nuget restore -PackagesDirectory .. & popd
 
 after_build:
 - cmd: >
