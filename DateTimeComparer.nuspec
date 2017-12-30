@@ -16,6 +16,6 @@
     <tags>DateTime Comparer Precision Seconds Minutes Hours Days Months Years</tags>
   </metadata>
   <files>
-    <file src="DateTimeComparer\bin\Release\net40\DateTimeComparer.*" target="lib\net40" />
+    <file src="src\DateTimeComparer\bin\Release\net452\DateTimeComparer.*" target="lib\net452" />
   </files>
 </package>
