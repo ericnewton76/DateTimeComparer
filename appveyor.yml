@@ -1,0 +1,71 @@
+version: 1.0.{build}
+
+pull_requests:
+  do_not_increment_build_number: true
+
+shallow_clone: true
+
+clone_depth: 1
+
+
+nuget:
+  account_feed: true
+  project_feed: true
+
+init:
+- ps: >
+    if($env:APPVEYOR_REPO_TAG -eq "true" -And $env:APPVEYOR_REPO_TAG_NAME.StartsWith("v") -eq $true) {
+  
+      Set-AppVeyorBuildVariable -Name APPVEYOR_BUILD_VERSION -Value $env:APPVEYOR_REPO_TAG_NAME.Substring(1)
+  
+    }
+  
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+
+configuration: Release
+
+before_build:
+- cmd: nuget restore DateTimeComparer.sln
+
+build:
+  verbosity: normal
+
+after_build:
+- cmd: >
+    nuget pack %APPVEYOR_PROJECT_NAME%.nuspec -properties Version=%APPVEYOR_BUILD_VERSION%
+
+artifacts:
+- path: '*.nupkg'
+  name: NugetPackage
+
+deploy:
+- provider: NuGet
+  api_key:
+    secure: 2SwDMmXZZtgoLWsldKZ8GCu9rZXpO5quTYtSNJQSeeiqDjnmo0OfutNVcH3jsfpj
+  skip_symbols: false
+  artifact: NugetPackage
+  on:
+    APPVEYOR_REPO_TAG: true
+- provider: GitHub
+  tag: v$(APPVEYOR_BUILD_VERSION)
+  release: v$(APPVEYOR_BUILD_VERSION)
+  auth_token:
+    secure: 1q8L7YRHOfCsImgmsUU6Nob5IEpYTRzHb1SSxn9BNzSVJYpbL3Vk0bZVL5cgFoHM
+  artifact: NugetPackage
+  force_update: true
+  on:
+    APPVEYOR_REPO_TAG: true
+
+notifications:
+- provider: Email
+  to:
+  - ericnewton76@gmail.com
+  subject: $(APPVEYOR_PROJECT_NAME) build $(APPVEYOR_BUILD_VERSION) completed.
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
