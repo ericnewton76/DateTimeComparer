@@ -28,3 +28,6 @@ nuget install DateTimeComparer
 
 Original code adapted from somewhere, cant remember exactly.
 
+## Contributing
+
+First of all, thanks! Send a pull request to the dev branch of this repo.  It'll get a quick review then merged to master, then tagged.  A tag is what actually generates a formal release into GitHub releases and to the Nuget Gallery.
